@@ -23,7 +23,6 @@ https.get(requestOptions, function (response) {
   });
 
 
-
   // the callback is invoked when all of the data has been received
   // (the `end` of the stream)
   response.on('end', function() {

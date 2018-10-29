@@ -1,8 +1,8 @@
-var https = require("https");
 
-function getHTML (options, callback) {
 
-  /* Add your code here */
+module.exports = function getHTML (options, callback) {
+  var https = require('https');
+    /* Your code here */
 
   https.get(options, function (response) {
 
@@ -21,19 +21,6 @@ function getHTML (options, callback) {
       callback(buffer); //because of asyncronous we have to console log at the end as we have to wait for all the chunk to accumulate in buffer
       console.log('Response stream complete.');
     });
-
   });
-
 }
 
-function printHTML (html) {
-  console.log(html);
-}
-
-var requestOptions = {
-  host: 'sytantris.github.io',
-  path: '/http-examples/step4.html'
-};
-
-
-getHTML(requestOptions, printHTML);
